@@ -28,7 +28,7 @@ export default defineConfig({
     ],
   ],
   use: {
-    headless: false,
+    headless: Boolean(process.env.CI),
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
