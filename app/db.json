@@ -1,0 +1,209 @@
+{
+  "products": [
+    {
+      "asin": "B0STUDY01",
+      "title": "Study Wireless Headphones",
+      "price": 29.99,
+      "stock": 12,
+      "department": "Electronics"
+    },
+    {
+      "asin": "B0STUDY02",
+      "title": "Study USB-C Charger",
+      "price": 14.5,
+      "stock": 40,
+      "department": "Electronics"
+    },
+    {
+      "asin": "B0STUDY03",
+      "title": "Study Paperback Notebook",
+      "price": 6.25,
+      "stock": 80,
+      "department": "Books"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ORD-1793140207679",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793140244179",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793140445936",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793310338411",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793310369661",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793310559873",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793310560552",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793310561183",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311443517",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311444656",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311445600",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311492393",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311493726",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793311494626",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793375926068",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793375927100",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793375928014",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381250217",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381250894",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381251457",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381288936",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381289544",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381290178",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381309153",
+      "asin": "B0STUDY01",
+      "quantity": 1,
+      "total": 29.99,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381309978",
+      "asin": "B0STUDY02",
+      "quantity": 1,
+      "total": 14.5,
+      "status": "PLACED"
+    },
+    {
+      "orderId": "ORD-1793381310628",
+      "asin": "B0STUDY03",
+      "quantity": 1,
+      "total": 6.25,
+      "status": "PLACED"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "HEADPHONES": {
+    "asin": "B0STUDY01",
+    "title": "Study Wireless Headphones",
+    "price": 29.99,
+    "stock": 12,
+    "department": "Electronics"
+  },
+  "CHARGER": {
+    "asin": "B0STUDY02",
+    "title": "Study USB-C Charger",
+    "price": 14.5,
+    "stock": 40,
+    "department": "Electronics"
+  },
+  "NOTEBOOK": {
+    "asin": "B0STUDY03",
+    "title": "Study Paperback Notebook",
+    "price": 6.25,
+    "stock": 80,
+    "department": "Books"
+  }
+}

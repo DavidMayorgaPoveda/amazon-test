@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StudyMart — Amazon-style store</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; background: #eaeded; }
+      header { background: #131921; color: #fff; padding: 12px 20px; display: flex; gap: 12px; align-items: center; }
+      .logo { font-weight: bold; }
+      input[type='search'] { flex: 1; padding: 8px; }
+      button { padding: 8px 14px; cursor: pointer; }
+      main { max-width: 900px; margin: 24px auto; }
+      .card { background: #fff; padding: 16px; margin-bottom: 12px; border-radius: 6px; }
+      .muted { color: #565959; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="logo">StudyMart</span>
+      <input id="search" type="search" aria-label="Search StudyMart" placeholder="Search StudyMart" />
+      <button id="go" type="button">Go</button>
+    </header>
+    <main>
+      <h1 id="heading">Results</h1>
+      <p id="status" class="muted">Search for headphones, charger, or notebook.</p>
+      <div id="results"></div>
+    </main>
+    <script>
+      const results = document.getElementById('results');
+      const status = document.getElementById('status');
+      const heading = document.getElementById('heading');
+      const search = document.getElementById('search');
+
+      async function runSearch(preserveStatus = false) {
+        const q = search.value.trim();
+        const url = q ? `/api/products?q=${encodeURIComponent(q)}` : '/api/products';
+        const response = await fetch(url);
+        const products = await response.json();
+        heading.textContent = q ? `Results for "${q}"` : 'All products';
+        if (!preserveStatus) {
+          status.textContent = `${products.length} result(s)`;
+        }
+        results.innerHTML = products
+          .map(
+            (p) => `
+            <article class="card" data-testid="product-card" data-asin="${p.asin}">
+              <h2>${p.title}</h2>
+              <p>ASIN: ${p.asin} · $${p.price.toFixed(2)} · Stock: ${p.stock}</p>
+              <button type="button" data-order="${p.asin}">Add to cart</button>
+            </article>`,
+          )
+          .join('');
+      }
+
+      document.getElementById('go').addEventListener('click', runSearch);
+      search.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          runSearch();
+        }
+      });
+      results.addEventListener('click', async (event) => {
+        const button = event.target.closest('[data-order]');
+        if (!button) {
+          return;
+        }
+        const asin = button.getAttribute('data-order');
+        const response = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ asin, quantity: 1 }),
+        });
+        const body = await response.json();
+        status.textContent = response.ok
+          ? `Order ${body.orderId} placed for ${asin}`
+          : body.error;
+        await runSearch(true);
+      });
+
+      runSearch();
+    </script>
+  </body>
+</html>

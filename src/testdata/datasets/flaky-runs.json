@@ -1,0 +1,7 @@
+{
+  "INTENTIONAL_FIRST_FAILURE": {
+    "caseId": "TC-050",
+    "description": "should fail the first attempt and pass on retry",
+    "passOnRetry": 1
+  }
+}

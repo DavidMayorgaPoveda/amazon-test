@@ -1,0 +1,17 @@
+{
+  "HEADPHONES": {
+    "term": "headphones"
+  },
+  "CHARGER": {
+    "term": "charger"
+  },
+  "NOTEBOOK": {
+    "term": "notebook"
+  },
+  "AMAZON_HEADPHONES": {
+    "term": "wireless headphones"
+  },
+  "UNKNOWN": {
+    "term": "zzznoproductxyz"
+  }
+}

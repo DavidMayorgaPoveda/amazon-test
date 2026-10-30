@@ -1,0 +1,26 @@
+{
+  "name": "study-amazon-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small layered Playwright study project: UI + API + DB",
+  "scripts": {
+    "server": "node app/server.js",
+    "test": "node scripts/run-tests.mjs --grep-invert @live",
+    "test:all": "node scripts/run-tests.mjs",
+    "test:ui": "node scripts/run-tests.mjs --project=ui --grep-invert @live",
+    "test:api": "node scripts/run-tests.mjs --project=api",
+    "test:db": "node scripts/run-tests.mjs --project=db",
+    "test:amazon": "node scripts/run-tests.mjs --grep @live",
+    "report": "npx playwright show-report",
+    "allure:generate": "npx allure generate ./allure-results",
+    "allure:open": "npx allure open ./allure-report",
+    "allure:report": "node scripts/run-tests.mjs --grep-invert @live --open-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.15.0",
+    "allure": "^3.22.1",
+    "allure-playwright": "^3.14.0",
+    "typescript": "^5.9.3"
+  }
+}
