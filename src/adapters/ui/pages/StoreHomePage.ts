@@ -33,6 +33,10 @@ export class StoreHomePage implements IStoreHomePage {
   async search(term: string): Promise<void> {
     await this.searchBox.fill(term);
     await this.goButton.click();
+    // The results heading is updated after fetch(). Wait for it so a fast runner
+    // does not read the previous heading.
+    const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    await this.page.getByRole('heading', { level: 1, name: new RegExp(escapedTerm, 'i') }).waitFor();
   }
 
   async addFirstProductToCart(): Promise<void> {
