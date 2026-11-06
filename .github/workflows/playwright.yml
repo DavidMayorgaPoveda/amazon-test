@@ -28,8 +28,11 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run tests
-        run: npm test -- --workers=8
+      - name: Run independent tests with four workers
+        run: npm run test:parallel -- --workers=4
+
+      - name: Run stateful end-to-end tests sequentially
+        run: npm run test:e2e -- --workers=1
 
       - name: Upload Playwright report
         if: always()

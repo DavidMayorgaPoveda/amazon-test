@@ -23,23 +23,25 @@ test.describe('Feature: Search then order across UI, API, and DB', () => {
       const stockBefore = catalogDb.getProduct(product.asin)?.stock ?? 0;
       let statusText = '';
 
-      await test.step('Act: search in UI and add first result to cart', async () => {
-        const result = await storeSearch.searchAndPlaceOrder(search);
-        statusText = result.status;
-      });
+      try {
+        await test.step('Act: search in UI and add first result to cart', async () => {
+          const result = await storeSearch.searchAndPlaceOrder(search);
+          statusText = result.status;
+        });
 
-      await test.step('Assert: UI, API, and DB all show the order', async () => {
-        expect(statusText).toMatch(/Order ORD-/);
-        const apiProduct = await productApi.getProductByAsin(product.asin);
-        expect('stock' in apiProduct.body ? apiProduct.body.stock : -1).toBe(stockBefore - 1);
-        const dbProduct = catalogDb.getProduct(product.asin);
-        expect(dbProduct?.stock).toBe(stockBefore - 1);
-        expect(catalogDb.getOrders(product.asin).length).toBeGreaterThan(0);
-      });
-
-      await test.step('Cleanup: restore stock so the suite stays isolated', async () => {
-        catalogDb.restoreStock(product.asin, stockBefore);
-      });
+        await test.step('Assert: UI, API, and DB all show the order', async () => {
+          expect(statusText).toMatch(/Order ORD-/);
+          const apiProduct = await productApi.getProductByAsin(product.asin);
+          expect('stock' in apiProduct.body ? apiProduct.body.stock : -1).toBe(stockBefore - 1);
+          const dbProduct = catalogDb.getProduct(product.asin);
+          expect(dbProduct?.stock).toBe(stockBefore - 1);
+          expect(catalogDb.getOrders(product.asin).length).toBeGreaterThan(0);
+        });
+      } finally {
+        await test.step('Cleanup: restore stock so the suite stays isolated', async () => {
+          catalogDb.restoreStock(product.asin, stockBefore);
+        });
+      }
     });
   });
 
